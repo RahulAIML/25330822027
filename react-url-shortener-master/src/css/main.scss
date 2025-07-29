@@ -1,0 +1,344 @@
+// reset css
+@import 'css_reset';
+@import 'layout';
+
+// font
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+// color theme
+$main_red: #E85A4F;
+$light_red: #E98074;
+$main_grey: #8E8D8A;
+$main_brown: #D8C3A5;
+$light_brown: #EAE7DC;
+$white: #ffffff;
+$black: #000000;
+$grey: #888888;
+
+// main style
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+a:checked,
+a:visited,
+a:hover {
+  color: inherit;
+}
+
+.Toastify__toast {
+  width: 50vw;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid $main_grey;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+
+  &-body {
+    height: 20px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.Toastify__toast--success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.Toastify__toast--error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+}
+
+// Navbar
+.navbar {
+  width: 100%;
+  height: 80px;
+  background-color: $main_red;
+
+  &__container {
+    align-items: center;
+
+    &__logo {
+      font-size: 36px;
+      line-height: 80px;
+      height: 100%;
+      color: $light_brown;
+      margin: auto 0 auto 2rem;
+
+      @media screen and (max-width: 768px) {
+        font-size: 24px;
+      }
+    }
+
+    &__button {
+      font-family: 'Ubuntu Mono', monospace;
+      height: 100%;
+      font-size: 16px;
+      background-color: $light_brown;
+      border-radius: 5px;
+      padding: 10px;
+      margin: auto 2rem auto 0;
+
+      @media screen and (max-width: 768px) {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.urlForm {
+  padding: 5rem 0 2rem 0;
+
+  &__container {
+    width: 80vw;
+    // height: 300px;
+    padding-bottom: 2rem;
+    border-radius: 10px;
+    border: 1px solid $light_brown;
+    box-shadow: 1px 1px 1px 1px $main_brown;
+    align-items: center;
+
+    &__input {
+      width: 80%;
+      height: 3rem;
+      margin-top: 3rem;
+      padding: 0 1rem;
+      font-size: 24px;
+      font-family: 'Ubuntu Mono', monospace;
+      border-radius: 10px;
+      border: 1px solid $grey;
+
+      @media screen and (max-width: 768px) {
+        font-size: 20px;
+        line-height: 32px;
+        padding: 0 10px;
+      }
+    }
+
+    &__buttons {
+      width: 80%;
+      justify-content: start;
+
+      .createButton,
+      .clearButton {
+        margin: 1.5rem 1rem 0 0;
+        padding: 0 1rem;
+        font-size: 24px;
+        line-height: 40px;
+        font-family: 'Ubuntu Mono', monospace;
+        border-radius: 10px;
+
+        @media screen and (max-width: 768px) {
+          font-size: 14px;
+          line-height: 30px;
+          padding: 0 10px;
+        }
+      }
+
+      .createButton {
+        background-color: $main_red;
+        color: $white;
+      }
+
+      .clearButton {
+        background-color: $light_brown;
+        color: $black;
+      }
+    }
+
+    &__result {
+      width: 80%;
+      color: #155724;
+      background-color: #d4edda;
+      border-color: #c3e6cb;
+      border-radius: 10px;
+      margin-top: 0.75rem;
+      padding: 1rem;
+
+      a {
+        color: blue;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.dataTable {
+  width: 100%;
+  margin-bottom: 3rem;
+
+  &__container {
+    width: 80vw;
+    height: 500px;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid $light_brown;
+    box-shadow: 1px 1px 1px 1px $main_brown;
+    // min-width: 500px;
+    overflow: auto;
+
+    table {
+      width: 100%;
+
+      tr {
+        width: 100%;
+        height: 20px;
+        font-size: 20px;
+        line-height: 20px;
+        text-align: left;
+
+        th,
+        td {
+          word-wrap: break-all;
+          padding: 1rem;
+
+          &:nth-child(1) {
+            width: 15%;
+          }
+
+          &:nth-child(2) {
+            width: 45%;
+          }
+
+          &:nth-child(3) {
+            width: 10%;
+          }
+
+          &:nth-child(4) {
+            width: 20%;
+          }
+
+          a {
+            cursor: pointer;
+            color: $light_red;
+          }
+        }
+
+        th {
+          font-size: 24px;
+          color: $main_red;
+          word-break: normal;
+
+          @media screen and (max-width: 992px) {
+            font-size: 18px;
+          }
+        }
+
+        td {
+          color: $grey;
+          word-break: break-all;
+
+          @media screen and (max-width: 992px) {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.userForm {
+  padding: 5rem 0;
+
+  &__container {
+    width: 50vw;
+    // height: 500px;
+    border-radius: 10px;
+    border: 1px solid $light_brown;
+    box-shadow: 1px 1px 1px 1px $main_brown;
+    align-items: center;
+    padding: 2rem 0;
+
+    @media screen and (max-width: 768px) {
+      width: 80vw;
+    }
+
+    &__title {
+      font-size: 36px;
+      margin-bottom: 1rem;
+    }
+
+    &__field {
+      margin: 0.5rem 0;
+      width: 80%;
+
+      label {
+        font-size: 20px;
+        margin: 0.5rem 0;
+      }
+
+      input {
+        height: 3rem;
+        padding: 0 1rem;
+        font-size: 24px;
+        font-family: 'Ubuntu Mono', monospace;
+        border-radius: 10px;
+        border: 1px solid $grey;
+      }
+    }
+
+    &__control {
+      width: 80%;
+      justify-content: start;
+
+      .submitButton,
+      .switchButton {
+        height: 40px;
+        width: 100%;
+        margin: 1rem auto 0 auto;
+        padding: 0 1rem;
+        font-size: 24px;
+        line-height: 40px;
+        font-family: 'Ubuntu Mono', monospace;
+        border-radius: 10px;
+
+        @media screen and (max-width: 768px) {
+          font-size: 18px;
+          line-height: 30px;
+        }
+      }
+
+      .submitButton {
+        background-color: $main_red;
+        color: $white;
+      }
+
+      .switchButton {
+        background-color: $light_brown;
+        color: $black;
+      }
+    }
+  }
+}
+
+.error__message {
+  color: red
+}
